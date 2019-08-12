@@ -2,16 +2,15 @@ from datastructuresalgorithms.nodes.node import Node
 
 class SinglyLinkedList:
     def __init__(self):
-        self.tail = None
+        self.tail = None #first node
+        self.head = None #last node
 
     def append(self, data):
         #Encapusulate the data in a node
         node = Node(data)
-
-        if self.tail == None:
-            self.tail = node
+        if self.head:
+            self.head.next = node
+            self.head = node
         else:
-            current = self.tail
-            while current.next:
-                current = current.next
-            current.next = node
+            self.tail = node
+            self.head = node
