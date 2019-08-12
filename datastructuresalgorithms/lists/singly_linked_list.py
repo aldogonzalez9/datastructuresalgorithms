@@ -23,3 +23,16 @@ class SinglyLinkedList:
             current = current.next
             yield val
     
+    def delete(self, data): #O(n)
+        current = self.tail
+        prev = self.tail
+        while current:
+            if current.data == data:
+                if current == self.tail:
+                    self.tail = current.next
+                else:
+                    prev.next = current.next
+                self.size -= 1
+                return
+            prev = current
+            current = current.next

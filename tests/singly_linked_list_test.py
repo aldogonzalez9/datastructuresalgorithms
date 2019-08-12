@@ -12,23 +12,37 @@ class SinglyLinkedListTest(TestCase):
 
     def setUp(self):
         self.list = SinglyLinkedList()
+        self.elements = ('egg', 'ham', 'spam')
 
     def tearDown(self):
         pass
 
     def testAppend(self):
-        elements = ('egg', 'ham', 'spam')
-        self.list.append(elements[0])
-        self.list.append(elements[1])
-        self.list.append(elements[2])
+        
+        self.list.append(self.elements[0])
+        self.list.append(self.elements[1])
+        self.list.append(self.elements[2])
 
         result = []
         for element in self.list.iter():
             result.append(element)
-        self.assertSequenceEqual(result, elements)
+        self.assertSequenceEqual(result, self.elements)
 
     def testSize(self):
-        self.list.append('some element')
-        self.list.append('some other element')
+        self.list.append(self.elements[0])
+        self.list.append(self.elements[1])
 
         self.assertEqual(self.list.size, 2)
+    
+    def testDelete(self):
+        self.list.append(self.elements[0])
+        self.list.append(self.elements[1])
+        self.list.append(self.elements[2])
+
+        self.list.delete(self.elements[1])
+
+        result = []
+        for element in self.list.iter():
+            result.append(element)
+
+        self.assertSequenceEqual(result, (self.elements[0], self.elements[2]) )
