@@ -8,6 +8,7 @@ class DoublyLinkedList(object):
     
     def append(self, data):
         """ Append an item to the list. """
+        # O(1)
         new_node = Node(data, None, None)
         if self.head is None:
             self.head = new_node
@@ -26,6 +27,7 @@ class DoublyLinkedList(object):
             yield val
     
     def delete(self, data):
+        #O(n)
         current = self.head
         node_deleted = False
         if current is None:
@@ -48,3 +50,9 @@ class DoublyLinkedList(object):
                 current = current.next
         if node_deleted:
             self.count -= 1
+
+    def contain(self, data):
+        for node_data in self.iter():
+            if data == node_data:
+                return True
+        return False

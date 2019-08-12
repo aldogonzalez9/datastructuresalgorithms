@@ -21,8 +21,7 @@ class DoublyLinkedListTest(TestCase):
     def tearDown(self):
         pass
 
-    def testAppend(self):
-        
+    def testAppend(self): 
         other_element = 'hotcakes'
         self.list.append(other_element)
         result = [element for element in self.list.iter()]
@@ -35,7 +34,7 @@ class DoublyLinkedListTest(TestCase):
     def testSizeAfterAppend(self):
         other_element = 'hotcakes'
         self.list.append(other_element)
-        
+
         self.assertEqual(self.list.count, 4)
 
     def testDelete(self):
@@ -54,8 +53,11 @@ class DoublyLinkedListTest(TestCase):
 
         self.assertEqual(self.list.count, 3)
 
-    # def testSearch(self):
-    #     self.assertEqual(self.list.search(self.elements[1]), True)
+    def testSearch(self):
+        self.assertEqual(self.list.contain(self.elements[1]), True)
+
+    def testSearchNotInList(self):
+        self.assertEqual(self.list.contain('Fries'), False)
 
     # def testClear(self):
     #     self.list.clear()
