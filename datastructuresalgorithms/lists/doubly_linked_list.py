@@ -56,3 +56,9 @@ class DoublyLinkedList(object):
             if data == node_data:
                 return True
         return False
+
+    def clear(self):
+        """ Clear the entire list. """
+        self.tail = None
+        self.head = None
+        self.size = 0

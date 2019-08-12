@@ -59,8 +59,8 @@ class DoublyLinkedListTest(TestCase):
     def testSearchNotInList(self):
         self.assertEqual(self.list.contain('Fries'), False)
 
-    # def testClear(self):
-    #     self.list.clear()
-    #     result = [element for element in self.list.iter()]
+    def testClear(self):
+        self.list.clear()
+        result = [element for element in self.list.iter()]
 
-    #     self.assertSequenceEqual(result, [])
+        self.assertSequenceEqual(result, [])

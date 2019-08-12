@@ -47,3 +47,4 @@ class SinglyLinkedList:
         """ Clear the entire list. """
         self.tail = None
         self.head = None
+        self.size = 0
