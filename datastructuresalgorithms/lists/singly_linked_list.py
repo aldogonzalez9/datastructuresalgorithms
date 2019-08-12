@@ -36,3 +36,9 @@ class SinglyLinkedList:
                 return
             prev = current
             current = current.next
+    
+    def search(self, data):
+        for node in self.iter():
+            if data == node:
+                return True
+        return False
