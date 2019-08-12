@@ -28,3 +28,9 @@ class SinglyLinkedListTest(TestCase):
             result.append(current.data)
             current = current.next
         self.assertSequenceEqual(result, elements)
+
+    def testSize(self):
+        self.list.append('some element')
+        self.list.append('some other element')
+
+        self.assertEqual(self.list.size, 2)
