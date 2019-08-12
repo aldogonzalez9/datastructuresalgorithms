@@ -22,11 +22,9 @@ class SinglyLinkedListTest(TestCase):
         self.list.append(elements[1])
         self.list.append(elements[2])
 
-        current = self.list.tail
         result = []
-        while current:
-            result.append(current.data)
-            current = current.next
+        for element in self.list.iter():
+            result.append(element)
         self.assertSequenceEqual(result, elements)
 
     def testSize(self):

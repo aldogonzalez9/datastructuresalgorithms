@@ -16,3 +16,10 @@ class SinglyLinkedList:
             self.tail = node
             self.head = node
     
+    def iter(self):
+        current =self.tail
+        while current:
+            val = current.data
+            current = current.next
+            yield val
+    
