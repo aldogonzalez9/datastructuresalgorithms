@@ -42,3 +42,8 @@ class SinglyLinkedList:
             if data == node:
                 return True
         return False
+
+    def clear(self):
+        """ Clear the entire list. """
+        self.tail = None
+        self.head = None

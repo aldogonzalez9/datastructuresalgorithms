@@ -40,3 +40,9 @@ class SinglyLinkedListTest(TestCase):
     
     def testSearch(self):
         self.assertEqual(self.list.search(self.elements[1]), True)
+
+    def testClear(self):
+        self.list.clear()
+        result = [element for element in self.list.iter()]
+
+        self.assertSequenceEqual(result, [])
