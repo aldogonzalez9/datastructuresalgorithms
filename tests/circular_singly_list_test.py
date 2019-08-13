@@ -68,14 +68,19 @@ class CircularSinglyLinkedListTest(TestCase):
 
         self.assertEqual(self.list.size, len(self.elements))
 
-    # def testSearch(self):
-    #     self.assertEqual(self.list.contain(self.elements[1]), True)
+    def testSearch(self):
+        self.assertEqual(self.list.search(self.elements[1]), True)
 
-    # def testSearchNotInList(self):
-    #     self.assertEqual(self.list.contain('Fries'), False)
+    def testSearchNotInList(self):
+        self.assertEqual(self.list.search('Fries'), False)
 
-    # def testClear(self):
-    #     self.list.clear()
-    #     result = [element for element in self.list.iter()]
-
-    #     self.assertSequenceEqual(result, [])
+    def testClear(self):
+        self.list.clear()
+        result = []
+        counter = 0
+        for element in self.list.iter():
+            counter += 1
+            result.append(element)
+            if counter > 20:
+                break
+        self.assertSequenceEqual(result, [])
